@@ -1,10 +1,10 @@
 import { Card } from "./components/Card/Card";
-import { data } from "./data/data";
+import { courses } from "./data/data";
 
 function App() {
   return (
     <div className="App">
-      <Card data={data}></Card>
+      <Card courses={courses}></Card>
     </div>
   );
 }
