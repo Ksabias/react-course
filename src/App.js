@@ -1,9 +1,10 @@
-import Button from "./components/Button/Button";
+import { Card } from "./components/Button/Card/Card";
+import { data } from "./data/data";
 
 function App() {
   return (
     <div className="App">
-      <Button></Button>
+      <Card data={data}></Card>
     </div>
   );
 }
