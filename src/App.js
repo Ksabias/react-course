@@ -1,4 +1,4 @@
-import { Card } from "./components/Button/Card/Card";
+import { Card } from "./components/Card/Card";
 import { data } from "./data/data";
 
 function App() {
