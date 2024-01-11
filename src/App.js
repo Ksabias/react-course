@@ -1,24 +1,32 @@
-// import { Card } from "./components/Card/Card";
-// import { courses } from "./data/data";
-import { NavLink, Route, Routes } from "react-router-dom";
-import Counter from "./components/Counter/Counter";
-import Users from "./components/Users/Users";
-import UserDetails from "./components/UserDetails/UserDetails";
+import { createContext } from "react";
+import Home from "./components/Home/Home";
+
+export const UserInfoContext = createContext(null);
 
 function App() {
+  const userInfo = {
+    name: "Username",
+    permissions: ["admin", "user", "other"],
+  };
+
   return (
     <div className="App">
+      <UserInfoContext.Provider value={userInfo}>
+        <Home></Home>
+      </UserInfoContext.Provider>
+
       {/* <Card courses={courses}></Card> */}
+
       {/* <Counter></Counter> */}
 
-      <nav>
-        <NavLink to="/users">Users</NavLink>
-      </nav>
+      {/* <nav value={userInfo}>
+          <NavLink to="/users">Users</NavLink>
+        </nav> */}
 
-      <Routes>
+      {/* <Routes>
         <Route path="/users" element={<Users></Users>}></Route>
         <Route path="/users/:id" element={<UserDetails></UserDetails>}></Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
