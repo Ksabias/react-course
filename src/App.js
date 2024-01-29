@@ -1,9 +1,16 @@
-import { Counter } from "./components/Counter/Counter";
+import Users from "./components/Users/Users";
+import { NavLink, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <nav>
+        <NavLink to="/users">Users</NavLink>
+      </nav>
+
+      <Routes>
+        <Route path="/users" element={<Users></Users>}></Route>
+      </Routes>
     </div>
   );
 }

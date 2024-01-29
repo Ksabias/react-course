@@ -1,18 +1,17 @@
+import { useFetch } from "../../hooks/useFetch";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const {
+    data: users,
+    isLoading,
+    isError,
+  } = useFetch("https://jsonplaceholder.typicode.com/users");
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await res.json();
-      setUsers(data);
-    };
-
-    getUsers();
-  }, []);
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div>
